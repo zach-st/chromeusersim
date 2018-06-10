@@ -1,0 +1,38 @@
+{
+  "name": "ChromeUserSim",
+  "description": "",
+  "version": "1.0",
+  "permissions": [
+    "alarms",
+	"tabs",
+    "activeTab",
+    "storage",
+    "webNavigation", 
+    "*://*/*",
+    "https://*/*"
+],
+  "content_security_policy": "script-src 'self' https://www.google-analytics.com; object-src 'self'",
+  "background": {
+    "scripts": [
+      "json.js",
+      "background.js"
+    ],
+    "persistent": true
+  },
+  "content_scripts": [{
+    "matches": [
+      "http://*/*",
+      "https://*/*"
+    ],
+    "js": ["content.js"]
+  }],
+  "icons": { "16": "icon_c_16.png",
+           "48": "icon_c_48.png",
+          "128": "icon_c_128.png" },
+  "browser_action": {
+    "default_title": "ChromeUserSim",
+    "default_popup": "options.html"
+  },
+  "options_page": "options.html",
+  "manifest_version": 2
+}
