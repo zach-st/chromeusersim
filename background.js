@@ -1,3 +1,7 @@
+
+import { presets } from './json.js';
+
+
 function getRandomIntInclusive(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
@@ -74,7 +78,7 @@ chrome.alarms.onAlarm.addListener(function(alarm) {
 
 function start() {
 	console.log('Starting...');
-	chrome.tabs.create({'url': chrome.extension.getURL('about:blank')}, function(tab) {
+	chrome.tabs.create({'url': chrome.runtime.getURL('about:blank')}, function(tab) {
 	});
 	chrome.tabs.query({
 		active: true,
