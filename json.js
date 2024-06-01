@@ -35,7 +35,7 @@ var presets = {
 		"news.google.com",
 		"nypost.com",
 		"nytimes.com",
-		"parallels.com"
+		"parallels.com",
 		"penfed.com",
 		"reddit.com",
 		"reddit.com/r/army",
@@ -61,3 +61,5 @@ var presets = {
 	],
 	"enabled": "Enabled"
 }
+
+export { presets as presets };
