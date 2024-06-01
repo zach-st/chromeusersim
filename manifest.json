@@ -4,20 +4,17 @@
   "version": "1.0",
   "permissions": [
     "alarms",
-	"tabs",
+	  "tabs",
     "activeTab",
     "storage",
-    "webNavigation", 
-    "*://*/*",
-    "https://*/*"
+    "webNavigation"
 ],
-  "content_security_policy": "script-src 'self' https://www.google-analytics.com; object-src 'self'",
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  },
   "background": {
-    "scripts": [
-      "json.js",
-      "background.js"
-    ],
-    "persistent": true
+    "service_worker": "background.js",
+    "type": "module"
   },
   "content_scripts": [{
     "matches": [
@@ -29,10 +26,10 @@
   "icons": { "16": "icon_c_16.png",
            "48": "icon_c_48.png",
           "128": "icon_c_128.png" },
-  "browser_action": {
+  "action": {
     "default_title": "ChromeUserSim",
     "default_popup": "options.html"
   },
   "options_page": "options.html",
-  "manifest_version": 2
+  "manifest_version": 3
 }
